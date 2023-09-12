@@ -1,0 +1,66 @@
+<aside>
+    <header>
+        <div>
+            <p>Gain Brain</p>
+        </div>
+    </header>
+    <nav class="side-navigation">
+        <ul>
+          <li class="active"><a href="#"><i class="fa fa-home"></i><span class="hidden-xs">Home</span></a></li>
+            <li><a routerLink="/courses"><i class="fa fa-folder-open"></i><span class="hidden-xs">Courses</span></a></li>
+            <li><a routerLink="/quiz"><i class="fa fa-tasks"></i><span class="hidden-xs">Quiz</span></a></li>
+            <li><a ><i class="fa fa-industry"></i><span class="hidden-xs">Reports</span></a></li>
+            <li><a ><i class="fa fa-cog"></i><span class="hidden-xs">Settings</span></a></li>
+        </ul>
+    </nav>
+</aside>
+<main>
+    <header class="main-head">
+        <h1>{{coursetitle}}</h1>
+    </header>
+    <!-- main content-->
+    <div class="wrapper">
+        <ul class="category-navigation">
+            <li class="active"><a href="#">List</a></li>
+            <li><a routerLink="/board">Board</a></li>
+            <li><a href="#">Calandar</a></li>
+            <li><a href="#">Progress</a></li>
+            <li><a href="#">Members</a></li>
+        </ul>
+        <div class="sidebarcourse">
+            <h3>Modules</h3>
+            <div *ngFor="let module of listmodules">
+                <br> 
+                <input type="checkbox" >
+                <p (click)="selectItem(module.name)">{{module.name}}</p>
+             </div>
+        </div>
+        <div class="row main-content ">
+            <div *ngIf="selectedItem == 'Introduction'">
+                <h1>Introduction</h1>
+
+                <iframe src="https://player.vimeo.com/video/297190664?h=189ffb04ef&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div *ngIf="selectedItem == 'Overall Modules'">
+                <h1>Overall Modules</h1>
+                <iframe src="https://player.vimeo.com/video/197887144?h=132d6a7a5a" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div *ngIf="selectedItem == 'Install tools'">
+                <h1>Install tools</h1>
+                <iframe src="https://player.vimeo.com/video/297190664?h=189ffb04ef&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div *ngIf="selectedItem == 'Project'">
+                <h1>Project</h1>
+                <iframe src="https://player.vimeo.com/video/297190664?h=189ffb04ef&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+           <div class="videocontainer">
+           </div>
+        </div>
+    </div>
+    <div class="courseDesscription">
+        This a Course Deatils
+        <h4>
+            {{courseDescription}}
+        </h4>
+    </div>
+</main>

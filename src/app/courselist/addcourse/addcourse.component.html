@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Add a New Course</h2>
+    <form [formGroup]="addcourseform">
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" name="title" formControlName="title" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" name="description" formControlName="description" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author" formControlName="author" required>
+      </div>
+      <div class="mb-3">
+        <label for="cost" class="form-label">Cost</label>
+        <input type="number" class="form-control" id="cost" name="cost" formControlName="cost" required>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="addcourse()">Submit</button>
+    </form>
+  </div>
+  

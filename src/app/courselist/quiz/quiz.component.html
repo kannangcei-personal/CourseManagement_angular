@@ -1,0 +1,24 @@
+<app-navication-home></app-navication-home>
+<br>
+<br>
+<div class="quiz-container">
+    <h1>{{ quizData.quizTitle }}</h1>
+    <div *ngFor="let question of quizData.questions; let i = index">
+      <div class="question">
+        <p>{{ i + 1 }}. {{ question.questionText }}</p>
+        <div *ngFor="let option of question.options; let j = index">
+          <label>
+            <input
+              type="radio"
+              name="q{{ i }}"
+              [value]="j"
+              (change)="checkAnswer(i, j)"
+            />
+            {{ option }}
+          </label>
+        </div>
+      </div>
+    </div>
+    <button (click)="showResults()">Submit</button>
+  </div>
+  

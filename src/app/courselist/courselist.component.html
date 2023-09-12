@@ -1,0 +1,28 @@
+<div class="coursecontainer">
+    <app-navication-home></app-navication-home>
+    <br>
+    <br>
+    <app-search (searchtextchanged)="onSearchTextEntered($event)"></app-search>
+   
+<div class="colleges">
+    <div *ngFor="let Course of Courses">
+        <!-- || Course.title.toLowerCase().include(searchText) -->
+        <div *ngIf="searchText == '' || Course.title.toLowerCase().includes(searchText) ">
+        <div id="college" class="card">
+            <img class="card-img-top" src="../../assets/courseimage.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{Course.title}}</h5>
+                <p class="card-text">{{Course.author}}</p>
+                <p class="card-text cost-value">Price: &#8377;{{Course.cost}}</p>
+                <div class="star-rating">
+                    <div class="star" *ngFor="let star of stars" [class.filled]="star <= rating">
+                      &#9733;
+                    </div>
+                  </div>                  
+                <a  class="btn btn-primary entrol" routerLink="/selectcourse/{{Course.id}}"  (click)="sendcoursename(Course.title)">Enroll</a>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

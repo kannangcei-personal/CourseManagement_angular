@@ -1,0 +1,74 @@
+<div class="logincontainer">
+  <div class="innercontainer">
+    <div class="left-image">
+      <img src="../../assets/bc.jpg" alt="" srcset="" width="400px" height="auto">
+    </div>
+    <div class="form-right">
+      <h1 class="title">Register</h1>
+        <form [formGroup]="signupForm" >
+          <div class="row">
+            <div class="col">
+              <label for="FirstName">First Name</label>
+              <input type="text" class="form-control" formControlName="firstName" placeholder="First name">
+              <span class="text-danger"
+                *ngIf="SignupFormController.firstName.errors?.['required'] &&( SignupFormController.firstName.touched || submiited)">
+                First Name is required
+              </span>
+              <span class="text-danger"
+              *ngIf="SignupFormController.firstName.errors?.['minlength'] && SignupFormController.firstName.touched ">
+              At least 3 letter
+               </span>
+            </div>
+            <div class="col">
+              <label for="LastName">Last Name</label>
+              <input type="text" class="form-control" formControlName="lastName" placeholder="Last name">
+              <span class="text-danger"
+              *ngIf="SignupFormController.lastName.errors?.['required'] && (SignupFormController.lastName.touched || submiited)">
+              last Name is required
+             </span>
+            </div>
+          </div>
+          <br>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <br>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" placeholder="Enter email">
+              <span class="text-danger"
+              *ngIf="SignupFormController.email.errors?.['required'] && (SignupFormController.email.touched || submiited) ">
+              Email is required
+             </span>
+             <span class="text-danger"
+             *ngIf="SignupFormController.email.errors?.['email'] && SignupFormController.email.touched ">
+             Email is Invalid
+            </span>
+              <br>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password">
+                <span class="text-danger"
+                *ngIf="SignupFormController.password.errors?.['required']&& (SignupFormController.password.touched || submiited) ">
+                password is required
+               </span>
+              </div>
+              <div class="col">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmpassword"formControlName="confirmPassword" placeholder=" Confirm Password">
+              </div>
+               <span class="text-danger"
+                *ngIf="SignupFormController.confirmPassword.errors?.['passwordsMismatch']&& (SignupFormController.confirmPassword.touched || submiited)  ">
+               Password Mismatch
+               </span>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary login-btn" (click)="OnRegister()">Register</button>
+            <div class="extra">
+              <a href="#" routerLink="/login" class="register">Already a user?</a>                
+              <a href="#" class="forget-password">Forgot Password?</a>
+              
+            </div>
+          </form>
+    </div>
+  </div>
+</div>

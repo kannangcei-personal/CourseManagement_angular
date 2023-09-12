@@ -1,0 +1,153 @@
+    <!-- Navbar top -->
+    <app-navication-home></app-navication-home>
+    <!-- End -->
+
+    <!-- Sidenav -->
+    <div class="sidenav">
+        <div class="profile">
+            <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
+
+            <div class="name user-name">
+                {{currentuser.firstName}}
+            </div>
+            <div class="job">
+                Student
+            </div>
+        </div>
+
+        <div class="sidenav-url">
+            <div class="url">
+                <a  class="active" (click)="loadagain()">Profile</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a  (click)="changepass()">Change Password</a>
+                <hr align="center">
+            </div>
+            <div class="url">
+                <a  (click)="logout()">Logout</a>
+                <hr align="center">
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+<body>
+     <!-- Main -->
+     <div class="main">
+        <h2>IDENTITY</h2>
+        <div class="card">
+            <div class="card-body">
+                <div class="wholecard" *ngIf="changepwd ; else changepasswordtemplate " >
+
+                
+                <i class="fa fa-pen fa-xs edit">
+                    <button class="editbutton" class="btn" (click)="editenable()">Edit</button>
+                </i>
+                <div *ngIf="edit; else viewpart" >
+                <!-- form code  -->
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
+                    <p class="infotext">Your can only Change what you wanted to change</p>
+                    <div class="form-group">
+                      <label for="firstName">First Name:</label>
+                      <input type="text" id="firstName" class="form-control" formControlName="firstName">
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName">Last Name:</label>
+                      <input type="text" id="lastName" class="form-control" formControlName="lastName">
+                    </div>
+                    <div class="form-group">
+                      <label for="address">Address:</label>
+                      <input type="text" id="address" class="form-control" formControlName="address">
+                    </div>
+                    <div class="form-group">
+                      <label for="hobbies">Hobbies:</label>
+                      <input type="text" id="hobbies" class="form-control" formControlName="hobbies">
+                    </div>
+                    <div class="form-group">
+                      <label for="job">Job:</label>
+                      <input type="text" id="job" class="form-control" formControlName="job">
+                    </div>
+                    <div class="form-group">
+                        <label for="skill">Skill:</label>
+                      <input type="text" id="skill" class="form-control" formControlName="skill">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  
+
+                </div>
+                <ng-template #viewpart>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>First Name</td>
+                                <td>:</td>
+                                <td>{{currentuser.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Last Name</td>
+                                <td>:</td>
+                                <td>{{currentuser.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>:</td>
+                                <td>{{currentuser.email}}</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td>:</td>
+                                <td><div *ngIf="currentuser.address == null || ''; else ouraddress "> Kanchipuram India</div></td>
+                                <ng-template #ouraddress>
+                                    <td>{{currentuser.address}}</td>
+                                </ng-template>
+                            </tr>
+                            <tr>
+                                <td>Hobbies</td>
+                                <td>:</td>
+                                <td><div *ngIf="currentuser.hobbies == null || ''; else ourhobbie "> Cricket</div></td>
+                                <ng-template #ourhobbie>
+                                    <td>{{currentuser.hobbies}}</td>
+                                </ng-template>
+                            </tr>
+                            <tr>
+                                <td>Job</td>
+                                <td>:</td>
+                                <td><div *ngIf="currentuser.job == null || ''; else ourjob "> Defult Job</div></td>
+                                <ng-template #ourjob>
+                                    <td>{{currentuser.job}}</td>
+                                </ng-template>
+                            </tr>
+                            <tr>
+                                <td>Skill</td>
+                                <td>:</td>
+                                <td><div *ngIf="currentuser.skill == null || ''; else ourskill "> Defult Skills</div></td>
+                                <ng-template #ourskill>
+                                    <td>{{currentuser.skill}}</td>
+                                </ng-template>
+                            </tr>
+                        </tbody> 
+                    </table>
+                </ng-template>
+            </div>
+            <ng-template #changepasswordtemplate>
+                <p>Change password</p>
+                <form [formGroup]="passwordchange" >
+                    <div class="form-group">
+                        <label for="firstName">Current password</label>
+                        <input type="password" id="firstName" class="form-control" formControlName="currentpassword">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">New password</label>
+                        <input type="password" id="lastName" class="form-control" formControlName="newpassword">
+                      </div>
+                      <br>
+                      <button type="submit" class="btn btn-primary" (click)="onsubmitpasschange()">Submit</button>
+                </form>
+            </ng-template>
+            </div>
+        </div>  
+    </div>
+</body>
+   

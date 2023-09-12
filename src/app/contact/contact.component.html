@@ -1,0 +1,92 @@
+<app-navication-home></app-navication-home>
+<section class="contact-page-sec">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-map-marked"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>address</h2>
+                <span>27, Akshaya Shanthi 44, Anna Salai, </span> 
+                <span>Chennai, Tamil Nadu 600002, INDIA</span> 
+              </div>
+            </div>            
+          </div>          
+        </div>          
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>E-mail</h2>
+                <span>kannang@ceiamerica.com</span> 
+                <span>kannang@gmail.com</span>
+              </div>
+            </div>            
+          </div>                
+        </div>                
+        <div class="col-md-4">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-info-text">
+                <h2>office time</h2>
+                <span>Mon - Fri  9:00 am - 8.00 pm</span>
+              </div>
+            </div>            
+          </div>          
+        </div>          
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="contact-page-form" method="post">
+            <h2>Get in Touch</h2> 
+            <form [formGroup]="contactform" >
+              <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Your Name" formControlName="name" name="name"/>
+                </div>
+              </div>  
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="email" placeholder="E-mail" name="email" formControlName="email" required/>
+                </div>
+              </div>                              
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Phone Number" formControlName="phoneNo" name="phone"/>
+                </div>
+              </div>  
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="single-input-field">
+                  <input type="text" placeholder="Subject" formControlName="subject" name="subject"/>
+                </div>
+              </div>                
+              <div class="col-md-12 message-input">
+                <div class="single-input-field">
+                  <textarea  placeholder="Write Your Message"formControlName="message" name="message"></textarea>
+                </div>
+              </div>                                                
+              <div class="single-input-fieldsbtn">
+                <input type="submit" value="Send Now" (click)="sendContactForm()"/>
+              </div>                          
+            </div>
+            </form>   
+          </div>      
+        </div>
+        <div class="col-md-4">        
+          <div class="contact-page-map">  
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.508461384366!2d80.26777347479032!3d13.066929487257283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526655ab7256bf%3A0x8c71f004cfb88133!2sCEI%20India%20Pvt%20Ltd%20%7C%20IT%20Services%20%26%20Software%20Company%20%7C%20Chennai!5e0!3m2!1sen!2sin!4v1694066990682!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>          
+        </div>        
+      </div>
+    </div>
+  </section>

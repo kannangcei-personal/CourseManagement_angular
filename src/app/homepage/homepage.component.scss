@@ -1,0 +1,357 @@
+*{
+    box-sizing: border-box;
+ }
+ 
+ 
+ h1 {
+    text-align: center;
+ }
+ .title-header{
+   background-color: rgba(var(--bs-dark-rgb));
+   padding: 5%;
+   color: rgba(var(--bs-white-rgb));
+   font-family: var(--bs-body-font-family);
+ }
+ .heading {
+   color: rgba(var(--bs-white-rgb));
+   font-weight: bolder;
+   font-size:xx-large;
+   text-align: center;
+ }
+ .discription{
+    color: rgba(var(--bs-white-rgb));
+    text-align: center;
+ }
+ .typing-animation p {
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #000;
+    }
+  }
+  
+ 
+ .bodypart{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+ }
+ 
+ .author-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add smooth transitions */
+    cursor: pointer; /* Change cursor to indicate interactivity */
+    object-fit: contain;
+  }
+  
+  .author-card:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Increase font size for the author's name */
+    font-weight: bold; /* Make the author's name bold */
+  }
+  .author-card{
+    width: 220px;
+    height: 400px;
+    margin: 30px;
+  } 
+  .course-title{
+ 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+ 
+  .footer{
+    background-color: rgba(var(--bs-dark-rgb));
+    padding: 5%;
+ }
+ 
+ 
+ /* new code comes here  */
+ 
+ 
+ body {
+   font-family: 'Roboto', sans-serif;
+   background: #eee;
+ }
+ 
+ h1 {
+   color: #007765;
+   font-weight: 500;
+   text-align: center;
+   font-size: 64px;
+ }
+ 
+ .teamcontainer {
+   width: 1200px;
+   margin: 0 auto;
+ }
+ 
+ .members {
+   display: flex;
+   flex-wrap: wrap;
+   width: 100%;
+ }
+ 
+ .member {
+   text-align: center;
+   flex-basis: 25%;
+   padding: 24px;
+   box-sizing: border-box;
+   margin-bottom: 30px;
+ }
+ 
+ .member-name {
+   margin: 0;
+   margin-top: 12px;
+   font-weight: 600;
+   font-size: 24px;
+   color: #007765;
+ }
+ 
+ .member-role {
+   font-style: italic;
+   font-size: 18px;
+ }
+ 
+ 
+ /* email subscribe */
+ 
+ 
+ 
+ 
+ 
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+ * {
+   box-sizing: border-box;
+ }
+ 
+ 
+ 
+ 
+ .right input button{
+ 
+   width: calc(100% - 3em);
+   padding: 10px;
+   margin: 10px;
+   font-size: 1.3rem;
+   outline: none;
+   margin: 1em;
+ 
+ }
+ .right button{
+   width: calc(100% - 2em);
+   margin: 10px;
+   background: #8800ff;
+   color: white;
+   border: none;
+   cursor: pointer;
+ }
+ 
+ 
+ 
+ 
+ 
+ .emailcontainer {
+     margin: 0 auto;
+     text-align: center;
+     
+ 
+     .logo {
+         width: 120px;
+     }
+ 
+     h1 {
+         margin: 1em 0;
+     }
+ 
+     p {
+         line-height: 1.7rem;
+     }
+ 
+     .left {
+         /* background: linear-gradient(160deg, #601df7 0%,#8800ff 100%); */
+         padding: 1em;
+         background-color: #007765;
+         
+         p, h1 {
+             color: white;
+         }
+     }
+ 
+     .emailcontainer .left{
+       background-color: aquamarine;
+     }
+ 
+     .right{
+   
+      p {
+       margin: 2em 0 1em;
+      }
+ 
+   .light {
+       color: rgba(255,255,255,.7) !important;
+       margin-top: 2em;
+   }
+   input, button {
+       width: calc(100% - 3em);
+       padding: .5em;
+       font-size: 1.3rem;
+       outline: none;
+       margin: 1em;
+   }
+ 
+   button {
+       width: calc(100% - 2em);
+       margin: 0;
+       background: #8800ff;
+       color: white;
+       border: none;
+       cursor: pointer;
+   }
+     }
+ 
+ }
+ 
+ .attention {
+     width: 100%;
+     margin: .5em auto 0;
+     text-align: center;
+ 
+     .me {
+         margin-top: 2em;
+         width: 3em;
+         border-radius: 50%;
+     }
+ 
+     .arrow {
+         width: 15em;
+     }
+ }
+ 
+ 
+ @media only screen and (min-width: 768px) {
+     body {
+         font-size: 20px;
+     }
+ 
+     button {
+         width: 60% !important;
+     }
+ 
+     input {
+         width: calc(60% - 1em) !important;
+     }
+ }
+ 
+ @media only screen and (min-width: 1024px) {
+     
+     .logo {
+         margin: 1em 0;
+     }
+ 
+     p {
+         line-height: 1.7em !important;
+     }
+ 
+     .inner {
+         display: grid;
+         grid-template-columns: 55% auto;
+ 
+         .left {
+             text-align: left;
+             padding: 0 2em;
+             height: 100vh;
+             display: grid;
+ 
+             .content {
+                 padding: 0 3em;
+             }
+ 
+             h1 {
+                 margin: 0;
+                 font-size: 2.4em;
+ 
+                 span {
+                     display: block;
+                 }
+             }
+         }
+ 
+         .right {
+             text-align: right;
+             align-self: center;
+             padding: 0 2em 1.5em;
+             justify-self: center;
+ 
+             input {
+                 width: 100% !important;
+                 margin: 1em 0;
+             }
+ 
+             button {
+                 width: 100% !important;
+             }
+         }
+     }
+ 
+     .proto-container {
+         clip-path: inset(0 45% 0 0);
+         position: absolute;
+         top: 20%;
+         height: 70%;
+         z-index: 0;
+         width: 100%;
+         pointer-events: none;
+ 
+         .proto {
+             border: 3px solid rgba(255,255,255,.1);
+             width: 19%;
+             height: 80%;
+             float: left;
+             margin-left: 1em;
+             transform: translateX(10%);
+         }
+     }
+ 
+ }
+ 
+ 
+ @media only screen and (min-width: 1600px) {
+     body {
+         font-size: 22px;
+     }
+ 
+     .content {
+         padding: 0 6em !important;
+     }
+ 
+     .right {
+         padding: 0 !important;
+     }
+ }
+ 
+ 
